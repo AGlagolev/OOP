@@ -4,8 +4,8 @@
 // Прорисовка белой линии
 void W_line()
 {
-	std::cout << std::endl;
-	for (int zz = 1; zz <= 70; zz++)
+	//std::cout << std::endl << "\r";
+	for (int zz = 1; zz <= 65; zz++)
 	{
 		setlocale(LC_ALL, "C");
 		std::cout << char(220);

@@ -21,9 +21,21 @@
     <ClCompile Include="Auxiliary.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Myclass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Myfunc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Auxiliary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Myclass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Myfunc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

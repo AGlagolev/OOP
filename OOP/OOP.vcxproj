@@ -120,9 +120,13 @@
   <ItemGroup>
     <ClCompile Include="Auxiliary.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Myclass.cpp" />
+    <ClCompile Include="Myfunc.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Auxiliary.h" />
+    <ClInclude Include="Myclass.h" />
+    <ClInclude Include="Myfunc.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
