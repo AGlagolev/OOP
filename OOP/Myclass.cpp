@@ -4,7 +4,13 @@ class Point
 {
 	double x;
 	double y;
+///////////////////////////////////////////////////////////////////////////
 public:
+
+	double distance()
+	{		
+		return(sqrt((pow(abs(this->x), 2) + (pow(abs(this->y), 2)))));
+	};
 	void set_x(double x)
 	{
 		if (x >= -100 && x <= 100)
@@ -37,28 +43,28 @@ public:
 		return(y);
 	}
 
-	// Constructors:
-	//Point()
-	//{
-	//	x = y = 0;// или this ->x = this -> y = 0;
-	//	std::cout << "DefaultConstructor:\t" << this << std::endl;
-	//}
+	////////////////////// Constructors: //////////////////////////////////////////
+	
 	Point(double x =0, double y =0)
 	{
 		this->x = x;
 		this->y = y;
-		std::cout << "Constructor:\t" << this << std::endl;
+		//std::cout << "Constructor:\t" << this << std::endl;
 	}
 	Point(const Point& other)
 	{
 		this->x = other.x;
 		this->y = other.y;
-		std::cout << "Constructor:\t" << this << std::endl;
+		//std::cout << "Constructor:\t" << this << std::endl;
 	}
-
-
+	//Point()
+	//{
+	//	x = y = 0;// или this ->x = this -> y = 0;
+	//	std::cout << "DefaultConstructor:\t" << this << std::endl;
+	//}
+	////////////////////// Destructor:
 	~Point()
 	{
-		std::cout << "Destructor:\t" << this << std::endl;
+		//std::cout << "Destructor:\t" << this << std::endl;
 	}
 };
