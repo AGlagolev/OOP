@@ -3,15 +3,16 @@
 #include"Myclass.h"
 #include"Myclass.cpp"
 #include"Myfunc.h"
-//using namespace std;
+using namespace std;
 
-#define POINTS_DISTANCE
+//#define POINTS_DISTANCE
+#define ASSIGNMENT
 //#define OTHERS
 
-void main()
+int main()
 {
 	setlocale(LC_ALL, "Russian");
-	system("color F0");
+	std::system("color F0");
 	Font(36);
 
 #ifdef POINTS_DISTANCE
@@ -41,13 +42,75 @@ void main()
 	B.set_y(by);
 
 	std::cout << "\t Расстояние точки A от точки В - "<< A.distance(B) << std::endl;
-	//std::cout << "\t Расстояние точки B от точки А - "<< B.distance(A) << std::endl;
+	
 	W_line();
 	std::cout << "\t Расстояние между точками А и B - "<< distance(A, B) << std::endl;
 	W_line();
+
+	//ПЕРЕГРУЗКА ОПЕРАТОРОВ
+	//std::cout << "Метод add - " << A.add(B) << std::endl;
+	std::cout << A + B << endl;
+
+	
+
 	system("pause");
+
+#ifdef ASSIGNMENT
+
+#endif // ASSIGNMENT
+
 #endif // POINTS
 	///////////////////////////////////////////////////////////////////////////
+#ifdef ASSIGNMENT
+	{
+
+		/*Point& operator=(const Point& other)
+		{
+			this->x = other.x;
+			this->y = other.y;
+			std::cout << "\t\tCopyAssignment:\t" << this << std::endl;
+			return *this;
+		}
+*/
+
+
+		Point A, B, C;
+		A = B = C = Point(2, 3);
+
+
+		//double cx, cy;
+		//Point C; // Объявление объекта "А" структуры "Point"
+		//Point D;
+		//std::cout << "\t\t Введите координаты точки C" << std::endl;
+		//W_line();
+		//std::cout << "введите х: ";
+		//std::cin >> cx;
+		//std::cout << "введите y: ";
+		//std::cin >> cy;
+
+
+		//C.set_x(cx);
+		//C.set_y(cy);
+
+		//std::cout << "Координаты точки C" << " x: " << C.get_x() << " y: " << C.get_y() << std::endl;
+		//W_line();
+		//std::cout << "Координаты точки D" << " x: " << D.get_x() << " y: " << D.get_y() << std::endl;
+		//W_line();
+		//std::cout << "\tПосле присвоения" << std::endl;
+		//D = C;
+
+		//std::cout << "Координаты точки C" << " x: " << C.get_x() << " y: " << C.get_y() << std::endl;
+		//W_line();
+		//std::cout << "Координаты точки D" << " x: " << D.get_x() << " y: " << D.get_y() << std::endl;
+		//W_line();
+
+
+
+
+	}
+#endif // ASSIGNMENT
+
+	//////////////////////////////////////////////////////////////////////////
 #ifdef OTHERS
 	{
 		//W_line();
@@ -97,5 +160,6 @@ void main()
 
 	
 
-
+	std::system("pause");
+	return 0;
 }

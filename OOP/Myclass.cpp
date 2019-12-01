@@ -7,11 +7,18 @@ class Point
 	double y;
 ///////////////////////////////////////////////////////////////////////////
 public:
+	/////////////////////////////////// Methods: /////////////////////////////////////////
+	double add(const Point& other)
+	{
+		return(this->x + other.x);
+	};
 
-	double distance(Point other)
+
+	double distance(Point other) const
 	{		
 		return(sqrt((pow(abs(this->x-other.x), 2) + (pow(abs(this->y-other.y), 2)))));
 	};
+
 	void set_x(double x)
 	{
 		if (x >= -100 && x <= 100)
@@ -43,29 +50,43 @@ public:
 	{
 		return(y);
 	}
+	/////////////////////// Operators: ////////////////////////////////////////////
 
-	////////////////////// Constructors: //////////////////////////////////////////
-	
-	Point(double x =0, double y =0)
+	double operator+(const Point& other)const
 	{
-		this->x = x;
-		this->y = y;
-		std::cout << "Constructor:\t" << this << std::endl;
+		return this->x + other.x;
 	}
-	Point(const Point& other)
+
+	Point& operator=(const Point& other)
 	{
 		this->x = other.x;
 		this->y = other.y;
-		std::cout << "CopyConstructor:\t" << this << std::endl;
+		std::cout << "\t\tCopyAssignment:\t" << this << std::endl;
+		return *this;
+	}
+	////////////////////// Constructors: //////////////////////////////////////////
+	
+	Point(double x =0, double y =0) 
+	{
+		this->x = x;
+		this->y = y;
+		std::cout << "\t\tConstructor:\t" << this << std::endl;
+	}
+	Point(const Point& other) 
+	{
+		this->x = other.x;
+		this->y = other.y;
+		std::cout << "\t\tCopyConstructor:\t" << this << std::endl;
 	}
 	//Point()
 	//{
 	//	x = y = 0;// или this ->x = this -> y = 0;
 	//	std::cout << "DefaultConstructor:\t" << this << std::endl;
 	//}
+
 	//////////////////// Destructor:
 	~Point()
 	{
-		std::cout << "Destructor:\t" << this << std::endl;
+		std::cout << "\t\tDestructor:\t" << this << std::endl;
 	}
 };

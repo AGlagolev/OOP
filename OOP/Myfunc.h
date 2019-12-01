@@ -1,4 +1,4 @@
 #pragma once
 #include "Myclass.h"
 //double ddd(Point other);
-double distance(Point A,Point B);
+double distance(const Point& A,const Point& B);
