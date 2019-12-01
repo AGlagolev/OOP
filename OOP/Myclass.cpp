@@ -1,3 +1,4 @@
+#include<iostream>
 #include"Myclass.h"
 
 class Point
@@ -7,9 +8,9 @@ class Point
 ///////////////////////////////////////////////////////////////////////////
 public:
 
-	double distance()
+	double distance(Point other)
 	{		
-		return(sqrt((pow(abs(this->x), 2) + (pow(abs(this->y), 2)))));
+		return(sqrt((pow(abs(this->x-other.x), 2) + (pow(abs(this->y-other.y), 2)))));
 	};
 	void set_x(double x)
 	{
@@ -49,22 +50,22 @@ public:
 	{
 		this->x = x;
 		this->y = y;
-		//std::cout << "Constructor:\t" << this << std::endl;
+		std::cout << "Constructor:\t" << this << std::endl;
 	}
 	Point(const Point& other)
 	{
 		this->x = other.x;
 		this->y = other.y;
-		//std::cout << "Constructor:\t" << this << std::endl;
+		std::cout << "CopyConstructor:\t" << this << std::endl;
 	}
 	//Point()
 	//{
 	//	x = y = 0;// или this ->x = this -> y = 0;
 	//	std::cout << "DefaultConstructor:\t" << this << std::endl;
 	//}
-	////////////////////// Destructor:
+	//////////////////// Destructor:
 	~Point()
 	{
-		//std::cout << "Destructor:\t" << this << std::endl;
+		std::cout << "Destructor:\t" << this << std::endl;
 	}
 };

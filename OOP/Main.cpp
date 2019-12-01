@@ -24,7 +24,7 @@ void main()
 	std::cin >> ax;
 	std::cout << "введите y: ";
 	std::cin >> ay;
-	system("cls");
+	//system("cls");
 
 	A.set_x(ax);
 	A.set_y(ay);
@@ -35,24 +35,21 @@ void main()
 	std::cin >> bx;
 	std::cout << "введите y: ";
 	std::cin >> by;
-	system("cls");
+	//system("cls");
 
 	B.set_x(bx);
 	B.set_y(by);
 
-	std::cout << "\t Расстояние точки A от начала координат - "<< A.distance() << std::endl;
-	std::cout << "\t Расстояние точки B от начала координат - "<< B.distance() << std::endl;
+	std::cout << "\t Расстояние точки A от точки В - "<< A.distance(B) << std::endl;
+	//std::cout << "\t Расстояние точки B от точки А - "<< B.distance(A) << std::endl;
 	W_line();
-	std::cout << "\t Расстояние между точками А и B - "<< distance(A.get_x(), B.get_x(), A.get_y(), B.get_y()) << std::endl;
+	std::cout << "\t Расстояние между точками А и B - "<< distance(A, B) << std::endl;
 	W_line();
 	system("pause");
 #endif // POINTS
 	///////////////////////////////////////////////////////////////////////////
 #ifdef OTHERS
 	{
-
-
-
 		//W_line();
 
 		//A.print();

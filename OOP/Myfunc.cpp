@@ -1,8 +1,10 @@
 #include "Myfunc.h"
 #include"Myclass.h"
 #include <cmath>
+#include"Myclass.cpp"
 
-double distance(double A_x, double B_x, double A_y, double B_y)
-{
-	return(sqrt((pow(abs(A_x-B_x),2)+(pow(abs(A_y-B_y),2)))));
+
+double distance(Point A, Point B)
+{	
+	return(sqrt((pow(abs( A.get_x()- B.get_x()), 2) + (pow(abs(A.get_y() - B.get_y()), 2)))));
 }
