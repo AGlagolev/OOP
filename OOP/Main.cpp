@@ -1,19 +1,23 @@
 #include <iostream>
+#include <string>
 #include"Auxiliary.h"
 #include"Myclass.h"
 #include"Myclass.cpp"
 #include"Myfunc.h"
+//#include"Myfunc.cpp"
+
 using namespace std;
 
 //#define POINTS_DISTANCE
-#define ASSIGNMENT
+//#define ASSIGNMENT
 //#define OTHERS
+#define SIMPLE_FRACTION
 
 int main()
 {
 	setlocale(LC_ALL, "Russian");
 	std::system("color F0");
-	Font(36);
+	Font(25);
 
 #ifdef POINTS_DISTANCE
 	double ax, ay, bx, by;
@@ -155,8 +159,44 @@ int main()
 	//W_line();
 	//system("pause");
 #endif // OTHERS
-
+    //////////////////////////////////////////////////////////////////////////
+#ifdef SIMPLE_FRACTION
 	
+	Begin :
+	{
+		
+		Fraction X, Y;
+		int num_1, num_2;
+		std::cout << "¬ведите первую простую дробь в формате ч/ч (где ч - целочисленое значение от 1 до 500): ";
+		parse(X);
+		//char str[7];
+		////cin >> num_1;
+		//cin.getline(str, 25);
+		//cout << str;
+		//std::cin.getline(a, 10, '/' );
+		//std::cout << num_1;
+		/*Y.set_num(12);
+		Y.set_denum(30);
+		
+		X.set_num(300);
+		X.set_denum(50);
+		cout << "\t";
+		X.print();
+		W_line();
+		cout << "\t";
+		Y.print();
+		W_line();*/
+		//int a, b;
+		/*a = X.get_num();
+		b = X.get_denum();*/
+		//std::cout << "\t„ислитель: " << a << "\t«наменатель: " << b << std::endl;
+	
+	
+	}
+	//goto Begin;
+
+#endif // SIMPLE_FRACTION
+
 
 	
 
