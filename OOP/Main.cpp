@@ -1,5 +1,5 @@
-#include <iostream>
-#include <string>
+//#include <iostream>
+//#include <string>
 #include"Auxiliary.h"
 #include"Myclass.h"
 #include"Myclass.cpp"
@@ -162,14 +162,17 @@ int main()
 #endif // OTHERS
     //////////////////////////////////////////////////////////////////////////
 #ifdef SIMPLE_FRACTION
+	//void parsw(const Fraction& F);
 	
+
+
 	Begin :
 	{
 		
 		Fraction X, Y;
 		int num_1, num_2;
 		std::cout << "¬ведите первую простую дробь в формате ч/ч (где ч - целочисленое значение от 1 до 500): ";
-		parse(X);
+		//parsw(X);
 		//char str[7];
 		////cin >> num_1;
 		//cin.getline(str, 25);
@@ -204,3 +207,19 @@ int main()
 	std::system("pause");
 	return 0;
 }
+//void parsw(const Fraction& F)
+//{
+//	/*int a, b, pos;
+//	std::string s1,s2,str;
+//	std::getline(std::cin, str);
+//
+//	pos = str.find('/', 0);
+//	s1 = str.substr(0, pos);
+//	s2 = str.substr(pos + 1);
+//	a = atoi(s1.c_str());
+//	b = atoi(s2.c_str());
+//	A.set_num(a);
+//	A.set_denum(b);
+//	std::cout << "\ta = "<< a << "\tb = " << b << std::endl;*/
+//	//return(0);
+//}

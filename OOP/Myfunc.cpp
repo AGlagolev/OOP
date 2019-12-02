@@ -1,9 +1,8 @@
+
 #include "Myfunc.h"
 #include"Myclass.h"
-#include <cmath>
 #include"Myclass.cpp"
-#include<iostream>
-#include<string>
+
 
 //using namespace std;
 
@@ -13,7 +12,7 @@ double distance(const Point& A, const  Point& B) // Защита полей от перезаписи с
 	return(sqrt((pow(abs( A.get_x()- B.get_x()), 2) + (pow(abs(A.get_y() - B.get_y()), 2)))));
 }
 
-void parse(Fraction& A)
+void parsw(Fraction& A)
 {
 	int a, b, pos;
 	std::string s1,s2,str;	
@@ -27,5 +26,5 @@ void parse(Fraction& A)
 	A.set_num(a);
 	A.set_denum(b);
 	std::cout << "\ta = "<< a << "\tb = " << b << std::endl;
-	
+
 }

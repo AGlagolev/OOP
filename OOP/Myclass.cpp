@@ -95,12 +95,7 @@ class Point
 ///////////////////////////////////////////////////////////////////////////
 public:
 	/////////////////////////////////// Methods: /////////////////////////////////////////
-	double add(const Point& other)
-	{
-		return(this->x + other.x);
-	};
-
-
+	
 	double distance(Point other) const
 	{		
 		return(sqrt((pow(abs(this->x-other.x), 2) + (pow(abs(this->y-other.y), 2)))));
