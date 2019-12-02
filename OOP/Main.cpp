@@ -19,6 +19,7 @@ int main()
 	std::system("color F0");
 	Font(25);
 
+
 #ifdef POINTS_DISTANCE
 	double ax, ay, bx, by;
 	Point A; // Объявление объекта "А" структуры "Point"
