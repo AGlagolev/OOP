@@ -45,7 +45,7 @@ public:
 ////////////////////////////////////////
 		void print() const
 		{
-			std::cout << this->numerator << " / " << this->denominator << std::endl;			
+			std::cout << this->numerator << " / " << this->denominator;			
 		}
 ////////////////////////////////////////
 
@@ -74,13 +74,13 @@ public:
 			set_num(nom);
 			set_denum(denom);
 			
-			std::cout << "\t\tConstructor:\t" << this << std::endl;
+			//std::cout << "\t\tConstructor:\t" << this << std::endl;
 		};
 /********************************************************************************************************/
 //// Destructor
 		~Fraction()
 		{
-			std::cout << "\t\tDestructor:\t" << this << std::endl;
+			//std::cout << "\t\tDestructor:\t" << this << std::endl;
 		};
 };
 

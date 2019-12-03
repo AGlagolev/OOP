@@ -1,12 +1,12 @@
-//#include <iostream>
+#include <iostream>
 //#include <string>
 #include"Auxiliary.h"
-#include"Myclass.h"
+//#include"Myclass.h"
 #include"Myclass.cpp"
 #include"Myfunc.h"
 //#include"Myfunc.cpp"
 
-using namespace std;
+//using namespace std;
 
 //#define POINTS_DISTANCE
 //#define ASSIGNMENT
@@ -16,8 +16,8 @@ using namespace std;
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	std::system("color F0");
-	Font(25);
+	std::system("color 0A");
+	Font(20);
 
 
 #ifdef POINTS_DISTANCE
@@ -114,7 +114,6 @@ int main()
 
 	}
 #endif // ASSIGNMENT
-
 	//////////////////////////////////////////////////////////////////////////
 #ifdef OTHERS
 	{
@@ -171,17 +170,44 @@ int main()
 		
 		Fraction X, Y;
 		int num_1, num_2;
-		std::cout << "Введите первую простую дробь в формате ч/ч (где ч - целочисленое значение от 1 до 500): ";
-		//parsw(X);
-		//char str[7];
-		////cin >> num_1;
-		//cin.getline(str, 25);
-		//cout << str;
-		//std::cin.getline(a, 10, '/' );
-		//std::cout << num_1;
-		/*Y.set_num(12);
-		Y.set_denum(30);
+		/*std::cout << "\tЗапись первого числа" << std::endl;
+		parsw(X);
+		std::cout << "\tЗапись второго числа" << std::endl;
+		parsw(Y);
+		vvod:
+		std::system("cls");
+		std::cout << "\nПервое число:  ";
+		X.print();
+		std::cout << "\t\tВторое число:  ";
+		Y.print();*/
+		std::cout << std::endl <<"\t\t\n\nВыбирете действие, которое необходимо сделать с числами:  \n\n" << std::endl;
+		std::cout << "1 - умножение\n2 - деление\n3 - сложение\n4 - вычитание\nESC - выход\n";
 		
+		num_1= _getch();		
+		//std::cout << num_1-48 << std::endl;
+		
+		/*switch (num_1 - 48)
+		{
+		case 1:
+		{
+
+			break;
+		};
+		case 21:
+		{
+			break;
+		};
+		default:
+		{
+			std::cout << "Неверный ввод_\n";
+			std::system("pause");
+			std::system("cls");
+			goto vvod;
+		
+		};
+		}*/
+		
+		/*
 		X.set_num(300);
 		X.set_denum(50);
 		cout << "\t";
@@ -189,9 +215,9 @@ int main()
 		W_line();
 		cout << "\t";
 		Y.print();
-		W_line();*/
+		W_line();
 		//int a, b;
-		/*a = X.get_num();
+		a = X.get_num();
 		b = X.get_denum();*/
 		//std::cout << "\tЧислитель: " << a << "\tЗнаменатель: " << b << std::endl;
 	
@@ -207,19 +233,3 @@ int main()
 	std::system("pause");
 	return 0;
 }
-//void parsw(const Fraction& F)
-//{
-//	/*int a, b, pos;
-//	std::string s1,s2,str;
-//	std::getline(std::cin, str);
-//
-//	pos = str.find('/', 0);
-//	s1 = str.substr(0, pos);
-//	s2 = str.substr(pos + 1);
-//	a = atoi(s1.c_str());
-//	b = atoi(s2.c_str());
-//	A.set_num(a);
-//	A.set_denum(b);
-//	std::cout << "\ta = "<< a << "\tb = " << b << std::endl;*/
-//	//return(0);
-//}
