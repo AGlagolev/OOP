@@ -17,7 +17,7 @@ int main()
 {
 	setlocale(LC_ALL, "Russian");
 	std::system("color 0A");
-	Font(20);
+	Font(25);
 
 
 #ifdef POINTS_DISTANCE
@@ -168,10 +168,12 @@ int main()
 	Begin :
 	{
 		
-		Fraction X, Y;
+		Fraction X, Y, Z;
 		int num_1, num_2;
-		/*std::cout << "\tЗапись первого числа" << std::endl;
+		W_line();
+		std::cout << "\tЗАПИСЬ ПЕРВОГО ЧИСЛА" << std::endl;
 		parsw(X);
+		W_line();
 		std::cout << "\tЗапись второго числа" << std::endl;
 		parsw(Y);
 		vvod:
@@ -179,21 +181,52 @@ int main()
 		std::cout << "\nПервое число:  ";
 		X.print();
 		std::cout << "\t\tВторое число:  ";
-		Y.print();*/
+		Y.print();
 		std::cout << std::endl <<"\t\t\n\nВыбирете действие, которое необходимо сделать с числами:  \n\n" << std::endl;
-		std::cout << "1 - умножение\n2 - деление\n3 - сложение\n4 - вычитание\nESC - выход\n";
+		std::cout << "1 - умножение\n2 - деление\n3 - сложение\n4 - вычитание\n9 - Перезаписать чисел\nESC - выход\n\n";
 		
 		num_1= _getch();		
 		//std::cout << num_1-48 << std::endl;
 		
-		/*switch (num_1 - 48)
+		switch (num_1 - 48)
 		{
 		case 1:
 		{
+			Z = X * Y;
+			X.print(); std::cout << " * "; Y.print(); std::cout << " = "; Z.print();
 
-			break;
+			if (Z.GCD())
+			{
+				std::cout << " = ";	Z.print();
+			}
+
+			std::cout << std::endl;
+			std::system("pause");
+			std::system("cls");
+			goto vvod;
+			//break;
 		};
-		case 21:
+		case 2:
+		{
+			Z = X / Y;
+			X.print(); std::cout << " : "; Y.print(); std::cout << " = "; Z.print();
+
+			if (Z.GCD())
+			{
+				std::cout << " = ";	Z.print();
+			}
+
+			std::cout << std::endl;
+			std::system("pause");
+			std::system("cls");
+			goto vvod;
+		};
+		case 9:
+		{		
+			std::system("cls");
+			goto Begin;
+		};
+		case -21:
 		{
 			break;
 		};
@@ -205,7 +238,7 @@ int main()
 			goto vvod;
 		
 		};
-		}*/
+		}
 		
 		/*
 		X.set_num(300);
@@ -230,6 +263,6 @@ int main()
 
 	
 
-	std::system("pause");
+	//std::system("pause");
 	return 0;
 }

@@ -15,6 +15,28 @@ class Fraction
 //// Public
 public:
 //// Metods
+	bool GCD()
+	{
+		int a, b;
+		a = this->numerator;
+		b = this->denominator;
+
+		bool res =false;
+		for (int i = this->denominator; i >1 ; i--)
+		{
+			if ((this->numerator%i == 0) && (this->denominator%i == 0))
+			{
+				a /= i;
+				b /= i;
+				this->numerator /= i;
+				this->denominator /= i;
+				i= this->denominator;
+				res = true;
+			}
+		}
+		return(res);
+	};
+////////////////////////////////////////
 		int get_num() const 
 	    {
 			return(this->numerator);	
@@ -56,13 +78,28 @@ public:
 ////////////////////////////////////////
 /********************************************************************************************************/
 //// Operators
-
-//////////////////////////////////////// = 
+//////////////////////////////////////// "*"
+		Fraction& operator*(const Fraction& other) const
+		{
+			Fraction S;			
+			S.set_num(this->numerator * other.numerator);
+			S.set_denum(this->denominator * other.denominator);
+			return S;
+		};
+//////////////////////////////////////// "/"
+		Fraction& operator/(const Fraction& other) const
+		{
+			Fraction S;
+			S.set_num(this->numerator * other.denominator);
+			S.set_denum(this->denominator * other.numerator);
+			return S;
+		};
+//////////////////////////////////////// "=" 
 		Fraction& operator=(const Fraction& other)
 		{
 			this->numerator = other.numerator;
 			this->denominator = other.denominator;
-			std::cout << "\t\tCopyAssignment:\t" << this << std::endl;
+			//std::cout << "\t\tCopyAssignment:\t" << this << std::endl;
 			return *this;
 		}
 ////////////////////////////////////////
