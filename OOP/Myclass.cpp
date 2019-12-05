@@ -15,6 +15,22 @@ class Fraction
 //// Public
 public:
 //// Metods
+	void LCM(const Fraction& other)
+	{
+		int a, b;
+		for (int i = 2; i <= this->denominator*other.denominator; i++)
+		{
+			if ((this->numerator%i == 0) && (this->denominator%i == 0))
+			{
+				a /= i;
+				b /= i;
+				this->numerator /= i;
+				this->denominator /= i;
+				i = this->denominator;			
+			}
+		}
+	};
+////////////////////////////////////////
 	bool GCD()
 	{
 		int a, b;
@@ -94,6 +110,26 @@ public:
 			S.set_denum(this->denominator * other.numerator);
 			return S;
 		};
+//////////////////////////////////////// "+"
+		Fraction& operator+(const Fraction& other) const
+		{
+			Fraction S;
+			//int a, b,num_max, num_min, den_min, den_max;
+
+			
+				S.denominator = this->denominator * other.denominator;
+				S.numerator = (this->numerator*(S.denominator / this->denominator)) + (other.numerator*(S.denominator / other.denominator));
+			
+			return S;
+		};
+//////////////////////////////////////// "-"
+		Fraction& operator-(const Fraction& other) const
+		{
+			Fraction S;
+			S.set_num(this->numerator * other.denominator);
+			S.set_denum(this->denominator * other.numerator);
+			return S;
+		};
 //////////////////////////////////////// "=" 
 		Fraction& operator=(const Fraction& other)
 		{
@@ -102,7 +138,9 @@ public:
 			//std::cout << "\t\tCopyAssignment:\t" << this << std::endl;
 			return *this;
 		}
-////////////////////////////////////////
+//////////////////////////////////////// "+"
+
+//////////////////////////////////////// "-"
 
 /********************************************************************************************************/
 //// Constructor

@@ -8,10 +8,10 @@
 
 //using namespace std;
 
+#define SIMPLE_FRACTION
 //#define POINTS_DISTANCE
 //#define ASSIGNMENT
 //#define OTHERS
-#define SIMPLE_FRACTION
 
 int main()
 {
@@ -19,7 +19,119 @@ int main()
 	std::system("color 0A");
 	Font(25);
 
+#ifdef SIMPLE_FRACTION
+	//void parsw(const Fraction& F);
 
+
+
+	Begin :
+	{
+
+		Fraction X, Y, Z;
+		int num_1, num_2;
+		W_line();
+		std::cout << "\tЗАПИСЬ ПЕРВОГО ЧИСЛА" << std::endl;
+		parsw(X);
+		W_line();
+		std::cout << "\tЗапись второго числа" << std::endl;
+		parsw(Y);
+	vvod:
+		std::system("cls");
+		std::cout << "\nПервое число:  ";
+		X.print();
+		std::cout << "\t\tВторое число:  ";
+		Y.print();
+		std::cout << std::endl << "\t\t\n\nВыбирете действие, которое необходимо сделать с числами:  \n\n" << std::endl;
+		std::cout << "1 - умножение\n2 - деление\n3 - сложение\n4 - вычитание\n9 - Перезаписать чисел\nESC - выход\n\n";
+
+		num_1 = _getch();
+		//std::cout << num_1-48 << std::endl;
+
+		switch (num_1 - 48)
+		{
+		case 1:
+		{
+			Z = X * Y;
+			X.print(); std::cout << " * "; Y.print(); std::cout << " = "; Z.print();
+
+			if (Z.GCD())
+			{
+				std::cout << " = ";	Z.print();
+			}
+
+			std::cout << std::endl;
+			std::system("pause");
+			std::system("cls");
+			goto vvod;
+			//break;
+};
+		case 2:
+		{
+			Z = X / Y;
+			X.print(); std::cout << " : "; Y.print(); std::cout << " = "; Z.print();
+
+			if (Z.GCD())
+			{
+				std::cout << " = ";	Z.print();
+			}
+
+			std::cout << std::endl;
+			std::system("pause");
+			std::system("cls");
+			goto vvod;
+		};
+		case 3:
+		{
+			Z = X + Y;
+			X.print(); std::cout << " + "; Y.print(); std::cout << " = ";
+
+			Z.GCD();			
+			Z.print();
+			
+
+			std::cout << std::endl;
+			std::system("pause");
+			std::system("cls");
+			goto vvod;
+		};
+		case 9:
+		{
+			std::system("cls");
+			goto Begin;
+		};
+		case -21:
+		{
+			break;
+		};
+		default:
+		{
+			std::cout << "Неверный ввод_\n";
+			std::system("pause");
+			std::system("cls");
+			goto vvod;
+
+		};
+		}
+
+		/*
+		X.set_num(300);
+		X.set_denum(50);
+		cout << "\t";
+		X.print();
+		W_line();
+		cout << "\t";
+		Y.print();
+		W_line();
+		//int a, b;
+		a = X.get_num();
+		b = X.get_denum();*/
+		//std::cout << "\tЧислитель: " << a << "\tЗнаменатель: " << b << std::endl;
+
+
+	}
+	//goto Begin;
+
+#endif // SIMPLE_FRACTION
 #ifdef POINTS_DISTANCE
 	double ax, ay, bx, by;
 	Point A; // Объявление объекта "А" структуры "Point"
@@ -160,105 +272,7 @@ int main()
 	//system("pause");
 #endif // OTHERS
     //////////////////////////////////////////////////////////////////////////
-#ifdef SIMPLE_FRACTION
-	//void parsw(const Fraction& F);
-	
 
-
-	Begin :
-	{
-		
-		Fraction X, Y, Z;
-		int num_1, num_2;
-		W_line();
-		std::cout << "\tЗАПИСЬ ПЕРВОГО ЧИСЛА" << std::endl;
-		parsw(X);
-		W_line();
-		std::cout << "\tЗапись второго числа" << std::endl;
-		parsw(Y);
-		vvod:
-		std::system("cls");
-		std::cout << "\nПервое число:  ";
-		X.print();
-		std::cout << "\t\tВторое число:  ";
-		Y.print();
-		std::cout << std::endl <<"\t\t\n\nВыбирете действие, которое необходимо сделать с числами:  \n\n" << std::endl;
-		std::cout << "1 - умножение\n2 - деление\n3 - сложение\n4 - вычитание\n9 - Перезаписать чисел\nESC - выход\n\n";
-		
-		num_1= _getch();		
-		//std::cout << num_1-48 << std::endl;
-		
-		switch (num_1 - 48)
-		{
-		case 1:
-		{
-			Z = X * Y;
-			X.print(); std::cout << " * "; Y.print(); std::cout << " = "; Z.print();
-
-			if (Z.GCD())
-			{
-				std::cout << " = ";	Z.print();
-			}
-
-			std::cout << std::endl;
-			std::system("pause");
-			std::system("cls");
-			goto vvod;
-			//break;
-		};
-		case 2:
-		{
-			Z = X / Y;
-			X.print(); std::cout << " : "; Y.print(); std::cout << " = "; Z.print();
-
-			if (Z.GCD())
-			{
-				std::cout << " = ";	Z.print();
-			}
-
-			std::cout << std::endl;
-			std::system("pause");
-			std::system("cls");
-			goto vvod;
-		};
-		case 9:
-		{		
-			std::system("cls");
-			goto Begin;
-		};
-		case -21:
-		{
-			break;
-		};
-		default:
-		{
-			std::cout << "Неверный ввод_\n";
-			std::system("pause");
-			std::system("cls");
-			goto vvod;
-		
-		};
-		}
-		
-		/*
-		X.set_num(300);
-		X.set_denum(50);
-		cout << "\t";
-		X.print();
-		W_line();
-		cout << "\t";
-		Y.print();
-		W_line();
-		//int a, b;
-		a = X.get_num();
-		b = X.get_denum();*/
-		//std::cout << "\tЧислитель: " << a << "\tЗнаменатель: " << b << std::endl;
-	
-	
-	}
-	//goto Begin;
-
-#endif // SIMPLE_FRACTION
 
 
 	
