@@ -126,8 +126,9 @@ public:
 		Fraction& operator-(const Fraction& other) const
 		{
 			Fraction S;
-			S.set_num(this->numerator * other.denominator);
-			S.set_denum(this->denominator * other.numerator);
+			S.denominator = this->denominator * other.denominator;
+			S.numerator = (this->numerator*(S.denominator / this->denominator)) - (other.numerator*(S.denominator / other.denominator));
+			
 			return S;
 		};
 //////////////////////////////////////// "=" 

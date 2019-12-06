@@ -1,12 +1,9 @@
 #include <iostream>
-//#include <string>
 #include"Auxiliary.h"
 //#include"Myclass.h"
 #include"Myclass.cpp"
 #include"Myfunc.h"
-//#include"Myfunc.cpp"
 
-//using namespace std;
 
 #define SIMPLE_FRACTION
 //#define POINTS_DISTANCE
@@ -20,13 +17,9 @@ int main()
 	Font(25);
 
 #ifdef SIMPLE_FRACTION
-	//void parsw(const Fraction& F);
-
-
 
 	Begin :
 	{
-
 		Fraction X, Y, Z;
 		int num_1, num_2;
 		W_line();
@@ -42,10 +35,10 @@ int main()
 		std::cout << "\t\tВторое число:  ";
 		Y.print();
 		std::cout << std::endl << "\t\t\n\nВыбирете действие, которое необходимо сделать с числами:  \n\n" << std::endl;
-		std::cout << "1 - умножение\n2 - деление\n3 - сложение\n4 - вычитание\n9 - Перезаписать чисел\nESC - выход\n\n";
+		std::cout << "1 - умножение\n2 - деление\n3 - сложение\n4 - вычитание\n9 - Перезаписать числа\nESC - выход\n\n";
 
 		num_1 = _getch();
-		//std::cout << num_1-48 << std::endl;
+		
 
 		switch (num_1 - 48)
 		{
@@ -63,7 +56,7 @@ int main()
 			std::system("pause");
 			std::system("cls");
 			goto vvod;
-			//break;
+			
 };
 		case 2:
 		{
@@ -94,6 +87,20 @@ int main()
 			std::system("cls");
 			goto vvod;
 		};
+		case 4:
+		{
+			Z = X - Y;
+			X.print(); std::cout << " - "; Y.print(); std::cout << " = ";
+
+			Z.GCD();
+			Z.print();
+
+
+			std::cout << std::endl;
+			std::system("pause");
+			std::system("cls");
+			goto vvod;
+		};
 		case 9:
 		{
 			std::system("cls");
@@ -112,24 +119,8 @@ int main()
 
 		};
 		}
-
-		/*
-		X.set_num(300);
-		X.set_denum(50);
-		cout << "\t";
-		X.print();
-		W_line();
-		cout << "\t";
-		Y.print();
-		W_line();
-		//int a, b;
-		a = X.get_num();
-		b = X.get_denum();*/
-		//std::cout << "\tЧислитель: " << a << "\tЗнаменатель: " << b << std::endl;
-
-
-	}
-	//goto Begin;
+			   
+	}	
 
 #endif // SIMPLE_FRACTION
 #ifdef POINTS_DISTANCE
@@ -272,11 +263,6 @@ int main()
 	//system("pause");
 #endif // OTHERS
     //////////////////////////////////////////////////////////////////////////
-
-
-
-	
-
-	//std::system("pause");
+	   	 
 	return 0;
 }
