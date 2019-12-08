@@ -4,8 +4,8 @@
 #include"Myclass.cpp"
 #include"Myfunc.h"
 
-//#define PR
-#define SIMPLE_FRACTION
+#define PR
+//#define SIMPLE_FRACTION
 //#define POINTS_DISTANCE
 //#define ASSIGNMENT
 //#define OTHERS
@@ -21,13 +21,9 @@ int main()
 
 
 #ifdef PR
-	Fraction F;
-	F.set_denum(2);
-	F.set_num(1);
-	Fraction N = F;
-	N.print();
-	N = F;
-	N.print();
+	double a;
+	a= 7,3;
+	std::cout << a;
 
 #endif // PR
 
@@ -52,14 +48,15 @@ int main()
 		std::cout << "\t\tВторое число:  ";
 		Y.print();
 		std::cout << std::endl << "\t\t\n\nВыбирете действие, которое необходимо сделать с числами:  \n\n" << std::endl;
-		std::cout << "1 - умножение\n2 - деление\n3 - сложение\n4 - вычитание\n9 - Перезаписать числа\nESC - выход\n\n";
+		std::cout << "1 - умножение\n2 - деление\n3 - сложение\n4 - вычитание\n5 - оператор \" += \"\n6 - оператор \" -= \"\n7 - оператор \" *= \"";
+		std::cout << "\n8 - оператор \" /= \"\n9 - сравнить числа\nr - Перезаписать числа\nESC - выход\n\n";
 
 		num_1 = _getch();
 		
-
+		std::cout << "\t" << num_1 - 48 << std::endl;
 		switch (num_1 - 48)
 		{
-		case 1:
+		case 1:// *
 		{
 			Z = X * Y;
 			X.print(); std::cout << " * "; Y.print(); std::cout << " = "; Z.print();
@@ -75,7 +72,7 @@ int main()
 			goto vvod;
 			
 };
-		case 2:
+		case 2:// :
 		{
 			Z = X / Y;
 			X.print(); std::cout << " : "; Y.print(); std::cout << " = "; Z.print();
@@ -90,7 +87,7 @@ int main()
 			std::system("cls");
 			goto vvod;
 		};
-		case 3:
+		case 3: // +
 		{
 			Z = X + Y;
 			X.print(); std::cout << " + "; Y.print(); std::cout << " = ";
@@ -104,7 +101,7 @@ int main()
 			std::system("cls");
 			goto vvod;
 		};
-		case 4:
+		case 4: // -
 		{
 			Z = X - Y;
 			X.print(); std::cout << " - "; Y.print(); std::cout << " = ";
@@ -118,7 +115,82 @@ int main()
 			std::system("cls");
 			goto vvod;
 		};
-		case 9:
+		case 5: // +=
+		{
+			X.print(); std::cout << " += "; Y.print(); std::cout << " => ";
+			X += Y;
+
+			X.GCD();
+			X.print();
+
+
+			std::cout << std::endl;
+			std::system("pause");
+			std::system("cls");
+			goto vvod;
+		};
+		case 6: // -=
+		{
+			X.print(); std::cout << " -= "; Y.print(); std::cout << " => ";
+		    X -= Y;
+
+			X.GCD();
+			X.print();
+
+
+			std::cout << std::endl;
+			std::system("pause");
+			std::system("cls");
+			goto vvod;
+		};
+		case 7: // *=
+		{
+			X.print(); std::cout << " *= "; Y.print(); std::cout << " => ";
+			X *= Y;
+
+			X.GCD();
+			X.print();
+
+
+			std::cout << std::endl;
+			std::system("pause");
+			std::system("cls");
+			goto vvod;
+		};
+		case 8: // :=
+		{
+			X.print(); std::cout << " /= "; Y.print(); std::cout << " => ";
+			X /= Y;
+
+			X.GCD();
+			X.print();
+
+
+			std::cout << std::endl;
+			std::system("pause");
+			std::system("cls");
+			goto vvod;
+		};
+		case 9: // ==, <=, >=
+		{
+			X.print();
+			if (X == Y) std::cout << " = ";  
+			if (X < Y) 	std::cout << " < "; 
+			if (X > Y) 	std::cout << " > "; 			
+			Y.print();
+			
+
+			std::cout << std::endl;
+			std::system("pause");
+			std::system("cls");
+			goto vvod;
+		};
+		case 34:
+		{
+			std::system("cls");
+			goto Begin;
+		};
+		case 66:
 		{
 			std::system("cls");
 			goto Begin;

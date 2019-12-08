@@ -95,13 +95,14 @@ public:
 ////////////////////////////////////////
 /********************************************************************************************************/
 //// Operators
+
 //////////////////////////////////////// "*"
-		Fraction& operator*(const Fraction& other) const
+		Fraction& operator*(const Fraction& other)
 		{
-			Fraction S;			
-			S.set_num(this->numerator * other.numerator);
-			S.set_denum(this->denominator * other.denominator);
-			return S;
+			Fraction fucking_res;			
+			fucking_res.set_num(this->numerator * other.numerator);
+			fucking_res.set_denum(this->denominator * other.denominator);
+			return fucking_res;
 		};
 //////////////////////////////////////// "/"
 		Fraction& operator/(const Fraction& other) const
@@ -115,8 +116,6 @@ public:
 		Fraction& operator+(const Fraction& other) const
 		{
 			Fraction S;
-			//int a, b,num_max, num_min, den_min, den_max;
-
 			
 				S.denominator = this->denominator * other.denominator;
 				S.numerator = (this->numerator*(S.denominator / this->denominator)) + (other.numerator*(S.denominator / other.denominator));
@@ -141,10 +140,73 @@ public:
 			//std::cout << "\t\tCopyAssignment:\t" << this << std::endl;
 			return *this;
 		}
-//////////////////////////////////////// "+"
-
-//////////////////////////////////////// "-"
-
+//////////////////////////////////////// "+="
+		void operator+=(const Fraction& other) 
+		{			
+			int Mult;
+			Mult = denominator * other.denominator;
+			numerator = (numerator*(Mult/denominator)) + (other.numerator*(Mult/ other.denominator));
+			denominator = Mult;
+			
+		};
+//////////////////////////////////////// "-="
+		void operator-=(const Fraction& other)
+		{
+			int Mult;
+			Mult = denominator * other.denominator;
+			numerator = (numerator*(Mult / denominator)) - (other.numerator*(Mult / other.denominator));
+			denominator = Mult;
+			
+		};
+//////////////////////////////////////// "*="
+		void operator*=(const Fraction& other)
+		{		
+			numerator = numerator * other.numerator;
+			denominator = denominator*other.denominator;
+		};
+//////////////////////////////////////// "/="
+		void operator/=(const Fraction& other)
+		{
+			numerator = numerator * other.denominator;
+			denominator = denominator * other.numerator;
+		};
+//////////////////////////////////////// "=="
+		bool operator==(const Fraction& other) const
+		{
+			bool d = false;
+			double c = 1 / 2;
+			double a = this->numerator / this->denominator;
+			double b = other.numerator / other.denominator;
+			if(a==b)
+			//if ((double)(numerator / denominator) == (double)(other.numerator / other.denominator))
+			{
+				d = true;
+				return d;
+			}
+			else
+			{
+				d = false;
+				return d;
+			}
+		};
+//////////////////////////////////////// "<"
+		bool operator<(const Fraction& other) const
+		{
+			if ((double)(numerator / denominator) < (double)(other.numerator / other.denominator))
+			{
+				return true;
+			}
+			else return false;
+		};
+//////////////////////////////////////// ">"
+		bool operator>(const Fraction& other) const
+		{
+			if ((double)(numerator / denominator) > (double)(other.numerator / other.denominator))
+			{
+				return true;
+			}
+			else return false;
+		};
 /********************************************************************************************************/
 //// Constructor
 		Fraction(int nom = 1, int denom = 1)
