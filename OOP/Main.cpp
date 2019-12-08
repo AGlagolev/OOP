@@ -4,7 +4,7 @@
 #include"Myclass.cpp"
 #include"Myfunc.h"
 
-
+//#define PR
 #define SIMPLE_FRACTION
 //#define POINTS_DISTANCE
 //#define ASSIGNMENT
@@ -16,11 +16,28 @@ int main()
 	std::system("color 0A");
 	Font(25);
 
+
+	
+
+
+#ifdef PR
+	Fraction F;
+	F.set_denum(2);
+	F.set_num(1);
+	Fraction N = F;
+	N.print();
+	N = F;
+	N.print();
+
+#endif // PR
+
+	/////////////////////////////////////////////////////////////////////////// 
 #ifdef SIMPLE_FRACTION
 
 	Begin :
 	{
 		Fraction X, Y, Z;
+		
 		int num_1, num_2;
 		W_line();
 		std::cout << "\tÇÀÏÈÑÜ ÏÅÐÂÎÃÎ ×ÈÑËÀ" << std::endl;
@@ -123,6 +140,7 @@ int main()
 	}	
 
 #endif // SIMPLE_FRACTION
+	///////////////////////////////////////////////////////////////////////////
 #ifdef POINTS_DISTANCE
 	double ax, ay, bx, by;
 	Point A; // Îáúÿâëåíèå îáúåêòà "À" ñòðóêòóðû "Point"

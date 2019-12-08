@@ -4,6 +4,7 @@
 /********************************************************************************************************/
 /*************************************** Fraction *******************************************************/
 /********************************************************************************************************/
+// Описывают простую дробь
 class Fraction
 {
 /********************************************************************************************************/
@@ -52,7 +53,7 @@ public:
 		}
 		return(res);
 	};
-////////////////////////////////////////
+//////////////////////////////////////// GET&SET
 		int get_num() const 
 	    {
 			return(this->numerator);	
@@ -134,6 +135,7 @@ public:
 //////////////////////////////////////// "=" 
 		Fraction& operator=(const Fraction& other)
 		{
+			//*this = other;
 			this->numerator = other.numerator;
 			this->denominator = other.denominator;
 			//std::cout << "\t\tCopyAssignment:\t" << this << std::endl;
@@ -150,13 +152,18 @@ public:
 			set_num(nom);
 			set_denum(denom);
 			
-			//std::cout << "\t\tConstructor:\t" << this << std::endl;
+			std::cout << "\t\tConstructor:\t" << this << std::endl;
 		};
+		Fraction(const Fraction& other)
+		{
+			*this = other;
+
+		}
 /********************************************************************************************************/
 //// Destructor
 		~Fraction()
 		{
-			//std::cout << "\t\tDestructor:\t" << this << std::endl;
+			std::cout << "\t\tDestructor:\t" << this << std::endl;
 		};
 };
 

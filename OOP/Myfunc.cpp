@@ -16,7 +16,7 @@ par_begin:
 
 	int a, b, pos;
 	a = b = pos = -1;
-	std::string s1,s2,str;	
+	std::string s1, s2, str;
 	std::cout << "¬ведите простую дробь в формате ч/ч \n(где ч - целочисленое число от 1 до 500): ";
 	std::getline(std::cin, str);
 	pos = str.find('/', 0);
