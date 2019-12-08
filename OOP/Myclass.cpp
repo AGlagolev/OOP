@@ -174,11 +174,11 @@ public:
 		bool operator==(const Fraction& other) const
 		{
 			bool d = false;
-			double c = 1 / 2;
-			double a = this->numerator / this->denominator;
-			double b = other.numerator / other.denominator;
-			if(a==b)
-			//if ((double)(numerator / denominator) == (double)(other.numerator / other.denominator))
+			double c = ((double)1) / 2;
+			double a = ((double)this->numerator) / this->denominator;
+			double b = ((double)other.numerator) / other.denominator;
+			
+			if ((((double)numerator) / denominator) == (((double)other.numerator) / other.denominator))
 			{
 				d = true;
 				return d;
@@ -191,8 +191,8 @@ public:
 		};
 //////////////////////////////////////// "<"
 		bool operator<(const Fraction& other) const
-		{
-			if ((double)(numerator / denominator) < (double)(other.numerator / other.denominator))
+		{			
+			if ((((double)numerator) / denominator) < (((double)other.numerator) / other.denominator))
 			{
 				return true;
 			}
@@ -201,7 +201,7 @@ public:
 //////////////////////////////////////// ">"
 		bool operator>(const Fraction& other) const
 		{
-			if ((double)(numerator / denominator) > (double)(other.numerator / other.denominator))
+			if ((((double)numerator) / denominator) > (((double)other.numerator) / other.denominator))
 			{
 				return true;
 			}
@@ -220,7 +220,7 @@ public:
 		{
 			*this = other;
 
-		}
+		};
 /********************************************************************************************************/
 //// Destructor
 		~Fraction()

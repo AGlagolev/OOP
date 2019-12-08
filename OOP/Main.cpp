@@ -4,8 +4,8 @@
 #include"Myclass.cpp"
 #include"Myfunc.h"
 
-#define PR
-//#define SIMPLE_FRACTION
+//#define PR
+#define SIMPLE_FRACTION
 //#define POINTS_DISTANCE
 //#define ASSIGNMENT
 //#define OTHERS
@@ -22,7 +22,7 @@ int main()
 
 #ifdef PR
 	double a;
-	a= 7,3;
+	a= 7.3;
 	std::cout << a;
 
 #endif // PR
@@ -49,11 +49,11 @@ int main()
 		Y.print();
 		std::cout << std::endl << "\t\t\n\n¬ыбирете действие, которое необходимо сделать с числами:  \n\n" << std::endl;
 		std::cout << "1 - умножение\n2 - деление\n3 - сложение\n4 - вычитание\n5 - оператор \" += \"\n6 - оператор \" -= \"\n7 - оператор \" *= \"";
-		std::cout << "\n8 - оператор \" /= \"\n9 - сравнить числа\nr - ѕерезаписать числа\nESC - выход\n\n";
+		std::cout << "\n8 - оператор \" /= \"\n9 - сравнить\nr - ѕерезаписать числа\nESC - выход\n\n";
 
 		num_1 = _getch();
 		
-		std::cout << "\t" << num_1 - 48 << std::endl;
+		//std::cout << "\t" << num_1 - 48 << std::endl;
 		switch (num_1 - 48)
 		{
 		case 1:// *
