@@ -32,7 +32,7 @@ public:
 		}
 	};
 ////////////////////////////////////////
-	bool GCD()
+	bool reduce()
 	{
 		int a, b;
 		a = this->numerator;

@@ -49,7 +49,7 @@ int main()
 			Z = X * Y;
 			X.print(); std::cout << " * "; Y.print(); std::cout << " = "; Z.print();
 
-			if (Z.GCD())
+			if (Z.reduce())
 			{
 				std::cout << " = ";	Z.print();
 			}
@@ -65,7 +65,7 @@ int main()
 			Z = X / Y;
 			X.print(); std::cout << " : "; Y.print(); std::cout << " = "; Z.print();
 
-			if (Z.GCD())
+			if (Z.reduce())
 			{
 				std::cout << " = ";	Z.print();
 			}
@@ -80,7 +80,7 @@ int main()
 			Z = X + Y;
 			X.print(); std::cout << " + "; Y.print(); std::cout << " = ";
 
-			Z.GCD();			
+			Z.reduce();			
 			Z.print();
 			
 
@@ -94,7 +94,7 @@ int main()
 			Z = X - Y;
 			X.print(); std::cout << " - "; Y.print(); std::cout << " = ";
 
-			Z.GCD();
+			Z.reduce();
 			Z.print();
 
 
@@ -108,7 +108,7 @@ int main()
 			X.print(); std::cout << " += "; Y.print(); std::cout << " => ";
 			X += Y;
 
-			X.GCD();
+			X.reduce();
 			X.print();
 
 
@@ -122,7 +122,7 @@ int main()
 			X.print(); std::cout << " -= "; Y.print(); std::cout << " => ";
 		    X -= Y;
 
-			X.GCD();
+			X.reduce();
 			X.print();
 
 
@@ -136,7 +136,7 @@ int main()
 			X.print(); std::cout << " *= "; Y.print(); std::cout << " => ";
 			X *= Y;
 
-			X.GCD();
+			X.reduce();
 			X.print();
 
 
@@ -150,7 +150,7 @@ int main()
 			X.print(); std::cout << " /= "; Y.print(); std::cout << " => ";
 			X /= Y;
 
-			X.GCD();
+			X.reduce();
 			X.print();
 
 
