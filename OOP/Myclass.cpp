@@ -155,8 +155,7 @@ public:
 			int Mult;
 			Mult = denominator * other.denominator;
 			numerator = (numerator*(Mult / denominator)) - (other.numerator*(Mult / other.denominator));
-			denominator = Mult;
-			
+			denominator = Mult;			
 		};
 //////////////////////////////////////// "*="
 		void operator*=(const Fraction& other)
@@ -172,22 +171,12 @@ public:
 		};
 //////////////////////////////////////// "=="
 		bool operator==(const Fraction& other) const
-		{
-			bool d = false;
-			double c = ((double)1) / 2;
-			double a = ((double)this->numerator) / this->denominator;
-			double b = ((double)other.numerator) / other.denominator;
-			
+		{					
 			if ((((double)numerator) / denominator) == (((double)other.numerator) / other.denominator))
-			{
-				d = true;
-				return d;
+			{				
+				return true;
 			}
-			else
-			{
-				d = false;
-				return d;
-			}
+			else return false;			
 		};
 //////////////////////////////////////// "<"
 		bool operator<(const Fraction& other) const
@@ -214,7 +203,7 @@ public:
 			set_num(nom);
 			set_denum(denom);
 			
-			std::cout << "\t\tConstructor:\t" << this << std::endl;
+			//std::cout << "\t\tConstructor:\t" << this << std::endl;
 		};
 		Fraction(const Fraction& other)
 		{
@@ -225,7 +214,7 @@ public:
 //// Destructor
 		~Fraction()
 		{
-			std::cout << "\t\tDestructor:\t" << this << std::endl;
+			//std::cout << "\t\tDestructor:\t" << this << std::endl;
 		};
 };
 

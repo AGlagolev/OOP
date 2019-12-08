@@ -4,7 +4,7 @@
 #include"Myclass.cpp"
 #include"Myfunc.h"
 
-//#define PR
+
 #define SIMPLE_FRACTION
 //#define POINTS_DISTANCE
 //#define ASSIGNMENT
@@ -16,18 +16,6 @@ int main()
 	std::system("color 0A");
 	Font(25);
 
-
-	
-
-
-#ifdef PR
-	double a;
-	a= 7.3;
-	std::cout << a;
-
-#endif // PR
-
-	/////////////////////////////////////////////////////////////////////////// 
 #ifdef SIMPLE_FRACTION
 
 	Begin :
