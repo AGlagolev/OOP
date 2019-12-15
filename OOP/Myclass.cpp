@@ -32,7 +32,7 @@ public:
 		}
 	};
 ////////////////////////////////////////
-	bool reduce()
+	Fraction& reduce()
 	{
 		int a, b;
 		a = this->numerator;
@@ -51,7 +51,7 @@ public:
 				res = true;
 			}
 		}
-		return(res);
+		return(*this);
 	};
 //////////////////////////////////////// GET&SET
 		int get_num() const 
@@ -81,8 +81,15 @@ public:
 			}
 			else this->denominator = 1;
 		};
+//////////////////////////////////////// OVER_SET
+		Fraction& operator()(int numer, int denum)
+		{
+			set_num(numer);
+			set_denum(denum);
+			return *this;
+		};
 ////////////////////////////////////////
-		void print() const
+		void print() 
 		{
 			std::cout << this->numerator << " / " << this->denominator;			
 		}
@@ -100,9 +107,12 @@ public:
 		Fraction& operator*(const Fraction& other)
 		{
 			Fraction fucking_res;			
+			std::cout << &fucking_res << std::endl;
+			std::cout << this << std::endl;
+			std::cout << &other << std::endl;
 			fucking_res.set_num(this->numerator * other.numerator);
 			fucking_res.set_denum(this->denominator * other.denominator);
-			return fucking_res;
+			return fucking_res.reduce();
 		};
 //////////////////////////////////////// "/"
 		Fraction& operator/(const Fraction& other) const
@@ -197,8 +207,58 @@ public:
 			else return false;
 		};
 /********************************************************************************************************/
+//// Increment_decrement
+//////////////////////////////////////////////// ++ //prefix increment
+		Fraction& operator++()
+		{
+			this->numerator += this->denominator;
+			return *this;
+		};
+//////////////////////////////////////////////// ++ //postfix increment
+		Fraction operator++(int)
+		{
+			Fraction buffer = *this;
+			this->numerator += this->denominator;
+			return buffer;
+		}
+/********************************************************************************************************/
+//// Type_convertion
+//////////////////////////////////////////////// int
+		operator bool()
+		{
+			return numerator;
+		}
+		operator int() 
+		{
+			return numerator;
+		}
+//////////////////////////////////////////////// int	
+		operator double()
+		{
+			return (double(numerator) / denominator);
+		}
 //// Constructor
-		Fraction(int nom = 1, int denom = 1)
+		Fraction()
+		{
+			this->numerator = 0;
+			this->denominator = 1;
+			std::cout << "\t\tDefaultConstructor:\t" << this << std::endl;
+		}
+		Fraction(int nom) // Использует неявное преобразование
+		{
+			set_denum(1);
+			set_num(nom*denominator);
+			//std::cout << "\t\tConstructor:\t" << this << std::endl;
+		};
+
+		
+		//explicit Fraction(int nom) // Исключает неявное преобразование
+		//{
+		//	set_num(nom*denominator);
+		//	set_denum(1);
+		//	//std::cout << "\t\tConstructor:\t" << this << std::endl;
+		//};
+		Fraction(int nom , int denom )
 		{
 			set_num(nom);
 			set_denum(denom);
@@ -210,6 +270,7 @@ public:
 			*this = other;
 
 		};
+
 /********************************************************************************************************/
 //// Destructor
 		~Fraction()

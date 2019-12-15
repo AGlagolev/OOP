@@ -4,7 +4,9 @@
 #include"Myclass.cpp"
 #include"Myfunc.h"
 
-
+//#define TYPE_CONVERT
+//#define INCREMENT_DECREMENT
+//#define COUT_CIN
 #define SIMPLE_FRACTION
 //#define POINTS_DISTANCE
 //#define ASSIGNMENT
@@ -15,11 +17,66 @@ int main()
 	setlocale(LC_ALL, "Russian");
 	std::system("color 0A");
 	Font(25);
+	///////////////////////////////////////////////////////////////////////////
+#ifdef TYPE_CONVERT
+	int a;
+	double b;
+	Fraction D(2,3);
+	std::cout << "явное int" << std::endl;
+	a = (int)D;
+	std::cout << a << std::endl;
+	std::cout << "Ќе€вное int" << std::endl;
+	a = D;
+	std::cout << a << std::endl;
+	std::cout << "Ќе€вное double" << std::endl;
+	b = D;
+	std::cout << b << std::endl;
 
+	std::cout << "явное double" << std::endl;
+	b = (double)D;
+	std::cout << b << std::endl;
+#endif // TYPE_CONVERT
+	///////////////////////////////////////////////////////////////////////////
+#ifdef INCREMENT_DECREMENT
+	{
+		Fraction A(1, 2), B(2, 3);
+		A.print();
+		++A;
+		std::cout << std::endl;
+		A.print();
+		std::cout << std::endl;
+		system("pause");
+		B = A++;
+		std::cout << std::endl;
+		B.print();
+		std::cout << std::endl;
+		A.print();
+		std::cout << std::endl;
+		system("pause");
+		std::cout << A++ << std::endl;
+}
+#endif // INCREMENT_DECREMENT
+	///////////////////////////////////////////////////////////////////////////
+#ifdef COUT_CIN
+	
+	{
+		Fraction A, B;
+		std::cout << "Object A: ";
+		std::cin >> A;
+		std::cout << "Object B: ";
+		std::cin >> B;
+		std::cout << "Object A = " <<  A << std::endl;
+		std::cout << "Object B = " <<  B << std::endl;
+		//std::cout << B << std::endl;
+		system("pause");
+		
+	}
+#endif // COUT_CIN
+	///////////////////////////////////////////////////////////////////////////
 #ifdef SIMPLE_FRACTION
 
 	Begin :
-	{
+	
 		Fraction X, Y, Z;
 		
 		int num_1, num_2;
@@ -49,7 +106,7 @@ int main()
 			Z = X * Y;
 			X.print(); std::cout << " * "; Y.print(); std::cout << " = "; Z.print();
 
-			if (Z.reduce())
+			if ((bool)Z.reduce())
 			{
 				std::cout << " = ";	Z.print();
 			}
@@ -195,7 +252,7 @@ int main()
 			goto vvod;
 
 		};
-		}
+		
 			   
 	}	
 
@@ -341,6 +398,10 @@ int main()
 	//system("pause");
 #endif // OTHERS
     //////////////////////////////////////////////////////////////////////////
-	   	 
+	/*   	 
+	Fraction A(1, 2);
+	Fraction B(3, 4);
+	Fraction C = A * B;
+	std::cout << C << std::endl;*/
 	return 0;
 }

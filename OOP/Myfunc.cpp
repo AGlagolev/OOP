@@ -42,3 +42,18 @@ par_begin:
 	
 
 }
+
+//// operator <<
+std::ostream& operator<<(std::ostream& os, const Fraction& obj)
+{
+	os << obj.get_num() << " / " << obj.get_denum();
+	return os;
+}
+//// operator <<
+std::istream& operator>>(std::istream& is,Fraction& obj)
+{
+	int num, den;
+	is >> num >> den;
+	obj(num, den);
+	return is;
+}
