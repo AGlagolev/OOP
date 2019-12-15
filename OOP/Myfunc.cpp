@@ -49,6 +49,12 @@ std::ostream& operator<<(std::ostream& os, const Fraction& obj)
 	os << obj.get_num() << " / " << obj.get_denum();
 	return os;
 }
+//////////////////////////////////////////////////////////////
+//std::ostream& operator<<(std::ostream& os, const Strings& obj)
+//{
+//	os << obj.;
+//	return os;
+//}
 //// operator <<
 std::istream& operator>>(std::istream& is,Fraction& obj)
 {

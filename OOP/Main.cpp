@@ -4,10 +4,11 @@
 #include"Myclass.cpp"
 #include"Myfunc.h"
 
+#define STRING
 //#define TYPE_CONVERT
 //#define INCREMENT_DECREMENT
 //#define COUT_CIN
-#define SIMPLE_FRACTION
+//#define SIMPLE_FRACTION
 //#define POINTS_DISTANCE
 //#define ASSIGNMENT
 //#define OTHERS
@@ -15,9 +16,22 @@
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	std::system("color 0A");
+	std::system("color 70");
 	Font(25);
-	///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+#ifdef STRING
+	Strings A;
+	//std::cout << A.get_pointer() << std::endl;
+	char Arr[300];
+	std::cout << "¬ведите строку: ";
+	std::cin.getline(Arr,300);
+	//std::cout << Arr << std::endl;
+	A.set_Arr(Arr);
+	A.print();
+	//std::cout << A.get_pointer() << std::endl;
+#endif // STRING
+///////////////////////////////////////////////////////////////////////////
 #ifdef TYPE_CONVERT
 	int a;
 	double b;
