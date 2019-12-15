@@ -64,11 +64,10 @@ std::istream& operator>>(std::istream& is,Fraction& obj)
 	return is;
 }
 
-void Arr_clear(char* Arr[])
+void Arr_clear(char* Arr)
 {
 	for (int i = 0; i < 300; i++)
 	{
 		*(Arr + i) = ' ';
 	}
-
 }

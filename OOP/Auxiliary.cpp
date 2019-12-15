@@ -7,9 +7,9 @@ void W_line()
 	//std::cout << std::endl << "\r";
 	for (int zz = 1; zz <= 80; zz++)
 	{
-		setlocale(LC_ALL, "C");
-		std::cout << char(220);
-		setlocale(LC_ALL, "");
+		//setlocale(LC_ALL, "C");
+		std::cout << "-";
+		//setlocale(LC_ALL, "");
 	}
 	std::cout << std::endl;
 }
@@ -59,7 +59,7 @@ void Font(int a)
 	cfi.dwFontSize.Y = a;                  // Height
 	cfi.FontFamily = FF_DONTCARE;
 	cfi.FontWeight = FW_NORMAL;	
-	wcscpy_s(cfi.FaceName/*, LF_FACESIZE*/, L"Cambria"); // Choose your font
+	wcscpy_s(cfi.FaceName/*, LF_FACESIZE*/, L"Console"); // Choose your font
 	SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
 
 

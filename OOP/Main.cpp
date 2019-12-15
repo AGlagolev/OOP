@@ -1,9 +1,11 @@
 #include <iostream>
 #include"Auxiliary.h"
+#include <Windows.h>
 //#include"Myclass.h"
 #include"Myclass.cpp"
 #include"Myfunc.h"
 
+//#define TEST
 #define STRING
 //#define TYPE_CONVERT
 //#define INCREMENT_DECREMENT
@@ -18,208 +20,226 @@ int main()
 	setlocale(LC_ALL, "Russian");
 	std::system("color 70");
 	Font(25);
+	SetConsoleCP(1251); // Для вывода кирилицы из массива + шрифт Lucida console, Console 
+	SetConsoleOutputCP(1251);
 ///////////////////////////////////////////////////////////////////////////
+#ifdef TEST
+	
+#endif // TEST
 
 #ifdef STRING
 	Strings As, Bs, Cs;
 
 BeginST:
 
-	char Arr[300];
+	char Arr[300], Brr[300];
+
+	Arr_clear(Arr);
 	std::cout << "Введите строку 1: ";
 	std::cin.getline(Arr,300);	
+	//std::cout << Arr << std::endl;
+	
 	As.set_Arr(Arr);
 	W_line();
 
+	Arr_clear(Arr);
 	std::cout << "Введите строку 2: ";
 	std::cin.getline(Arr, 300);
 	Bs.set_Arr(Arr);
 	W_line();
 
+	//As.print();
+	//std::cout << As.get_len() << std::endl;
+	//W_line();	
+	//Bs.print();
+	//std::cout << Bs.get_len() << std::endl;
+
+
+
+
+	vvod_S:
+	std::system("cls");
+	std::cout << "\nПервая строка:  ";
 	As.print();
-	std::cout << As.get_num() << std::endl;
+	std::cout << "( "<< As.get_len() + 1 << " Байт)";
+	W_line();
+	std::cout << "\nВтораяая строка:  ";
+	Bs.print();
+	std::cout << "( "<< Bs.get_len() + 1 << " Байт)";
+	W_line();
+	std::cout << std::endl << "\t\t\nВыбирете действие, которое необходимо сделать со строками:  \n" << std::endl;
+	std::cout << "1 - \n2 - \n3 - \n4 - \n5 - \n6 - \n7 - ";
+	std::cout << "\n8 - \n9 - \nr - Перезаписать строки\nESC - выход\n\n";
+
+
+
 	
+	//std::cout << _getch()-48;
+	switch (_getch() - 48)
+	{
+		//	case 1:// *
+		//	{
+		//		Z = X * Y;
+		//		X.print(); std::cout << " * "; Y.print(); std::cout << " = "; Z.print();
+		//
+		//		if ((bool)Z.reduce())
+		//		{
+		//			std::cout << " = ";	Z.print();
+		//		}
+		//
+		//		std::cout << std::endl;
+		//		std::system("pause");
+		//		std::system("cls");
+		//		goto vvod;
+		//
+		//	};
+		//	case 2:// :
+		//	{
+		//		Z = X / Y;
+		//		X.print(); std::cout << " : "; Y.print(); std::cout << " = "; Z.print();
+		//
+		//		if (Z.reduce())
+		//		{
+		//			std::cout << " = ";	Z.print();
+		//		}
+		//
+		//		std::cout << std::endl;
+		//		std::system("pause");
+		//		std::system("cls");
+		//		goto vvod;
+		//	};
+		//	case 3: // +
+		//	{
+		//		Z = X + Y;
+		//		X.print(); std::cout << " + "; Y.print(); std::cout << " = ";
+		//
+		//		Z.reduce();
+		//		Z.print();
+		//
+		//
+		//		std::cout << std::endl;
+		//		std::system("pause");
+		//		std::system("cls");
+		//		goto vvod;
+		//	};
+		//	case 4: // -
+		//	{
+		//		Z = X - Y;
+		//		X.print(); std::cout << " - "; Y.print(); std::cout << " = ";
+		//
+		//		Z.reduce();
+		//		Z.print();
+		//
+		//
+		//		std::cout << std::endl;
+		//		std::system("pause");
+		//		std::system("cls");
+		//		goto vvod;
+		//	};
+		//	case 5: // +=
+		//	{
+		//		X.print(); std::cout << " += "; Y.print(); std::cout << " => ";
+		//		X += Y;
+		//
+		//		X.reduce();
+		//		X.print();
+		//
+		//
+		//		std::cout << std::endl;
+		//		std::system("pause");
+		//		std::system("cls");
+		//		goto vvod;
+		//	};
+		//	case 6: // -=
+		//	{
+		//		X.print(); std::cout << " -= "; Y.print(); std::cout << " => ";
+		//		X -= Y;
+		//
+		//		X.reduce();
+		//		X.print();
+		//
+		//
+		//		std::cout << std::endl;
+		//		std::system("pause");
+		//		std::system("cls");
+		//		goto vvod;
+		//	};
+		//	case 7: // *=
+		//	{
+		//		X.print(); std::cout << " *= "; Y.print(); std::cout << " => ";
+		//		X *= Y;
+		//
+		//		X.reduce();
+		//		X.print();
+		//
+		//
+		//		std::cout << std::endl;
+		//		std::system("pause");
+		//		std::system("cls");
+		//		goto vvod;
+		//	};
+		//	case 8: // :=
+		//	{
+		//		X.print(); std::cout << " /= "; Y.print(); std::cout << " => ";
+		//		X /= Y;
+		//
+		//		X.reduce();
+		//		X.print();
+		//
+		//
+		//		std::cout << std::endl;
+		//		std::system("pause");
+		//		std::system("cls");
+		//		goto vvod;
+		//	};
+		//	case 9: // ==, <=, >=
+		//	{
+		//		X.print();
+		//		if (X == Y) std::cout << " = ";
+		//		if (X < Y) 	std::cout << " < ";
+		//		if (X > Y) 	std::cout << " > ";
+		//		Y.print();
+		//
+		//
+		//		std::cout << std::endl;
+		//		std::system("pause");
+		//		std::system("cls");
+		//		goto vvod;
+		//	};
+	case 34:
+	{
+		std::system("cls");
+		goto BeginST;
+	};
+	case 66:
+	{
+		std::system("cls");
+		goto BeginST;
+	};
+	case 154:
+	{
+		std::system("cls");
+		goto BeginST;
+	};
+	case 186:
+	{
+		std::system("cls");
+		goto BeginST;
+	};
+	case -21:
+	{
+		break;
+	};
+	default:
+	{
+		std::cout << "Неверный ввод_\n";
+		std::system("pause");
+		std::system("cls");
+		goto vvod_S;
 
+	};
+	}
 
-
-
-//	Fraction X, Y, Z;
-//
-//	int num_1;
-//	W_line();
-//	std::cout << "\tЗАПИСЬ ПЕРВОГО ЧИСЛА" << std::endl;
-//	parsw(X);
-//	W_line();
-//	std::cout << "\tЗапись второго числа" << std::endl;
-//	parsw(Y);
-//vvod:
-//	std::system("cls");
-//	std::cout << "\nПервое число:  ";
-//	X.print();
-//	std::cout << "\t\tВторое число:  ";
-//	Y.print();
-//	std::cout << std::endl << "\t\t\n\nВыбирете действие, которое необходимо сделать с числами:  \n\n" << std::endl;
-//	std::cout << "1 - умножение\n2 - деление\n3 - сложение\n4 - вычитание\n5 - оператор \" += \"\n6 - оператор \" -= \"\n7 - оператор \" *= \"";
-//	std::cout << "\n8 - оператор \" /= \"\n9 - сравнить\nr - Перезаписать числа\nESC - выход\n\n";
-//
-//	num_1 = _getch();
-//
-//	//std::cout << "\t" << num_1 - 48 << std::endl;
-//	switch (num_1 - 48)
-//	{
-//	case 1:// *
-//	{
-//		Z = X * Y;
-//		X.print(); std::cout << " * "; Y.print(); std::cout << " = "; Z.print();
-//
-//		if ((bool)Z.reduce())
-//		{
-//			std::cout << " = ";	Z.print();
-//		}
-//
-//		std::cout << std::endl;
-//		std::system("pause");
-//		std::system("cls");
-//		goto vvod;
-//
-//	};
-//	case 2:// :
-//	{
-//		Z = X / Y;
-//		X.print(); std::cout << " : "; Y.print(); std::cout << " = "; Z.print();
-//
-//		if (Z.reduce())
-//		{
-//			std::cout << " = ";	Z.print();
-//		}
-//
-//		std::cout << std::endl;
-//		std::system("pause");
-//		std::system("cls");
-//		goto vvod;
-//	};
-//	case 3: // +
-//	{
-//		Z = X + Y;
-//		X.print(); std::cout << " + "; Y.print(); std::cout << " = ";
-//
-//		Z.reduce();
-//		Z.print();
-//
-//
-//		std::cout << std::endl;
-//		std::system("pause");
-//		std::system("cls");
-//		goto vvod;
-//	};
-//	case 4: // -
-//	{
-//		Z = X - Y;
-//		X.print(); std::cout << " - "; Y.print(); std::cout << " = ";
-//
-//		Z.reduce();
-//		Z.print();
-//
-//
-//		std::cout << std::endl;
-//		std::system("pause");
-//		std::system("cls");
-//		goto vvod;
-//	};
-//	case 5: // +=
-//	{
-//		X.print(); std::cout << " += "; Y.print(); std::cout << " => ";
-//		X += Y;
-//
-//		X.reduce();
-//		X.print();
-//
-//
-//		std::cout << std::endl;
-//		std::system("pause");
-//		std::system("cls");
-//		goto vvod;
-//	};
-//	case 6: // -=
-//	{
-//		X.print(); std::cout << " -= "; Y.print(); std::cout << " => ";
-//		X -= Y;
-//
-//		X.reduce();
-//		X.print();
-//
-//
-//		std::cout << std::endl;
-//		std::system("pause");
-//		std::system("cls");
-//		goto vvod;
-//	};
-//	case 7: // *=
-//	{
-//		X.print(); std::cout << " *= "; Y.print(); std::cout << " => ";
-//		X *= Y;
-//
-//		X.reduce();
-//		X.print();
-//
-//
-//		std::cout << std::endl;
-//		std::system("pause");
-//		std::system("cls");
-//		goto vvod;
-//	};
-//	case 8: // :=
-//	{
-//		X.print(); std::cout << " /= "; Y.print(); std::cout << " => ";
-//		X /= Y;
-//
-//		X.reduce();
-//		X.print();
-//
-//
-//		std::cout << std::endl;
-//		std::system("pause");
-//		std::system("cls");
-//		goto vvod;
-//	};
-//	case 9: // ==, <=, >=
-//	{
-//		X.print();
-//		if (X == Y) std::cout << " = ";
-//		if (X < Y) 	std::cout << " < ";
-//		if (X > Y) 	std::cout << " > ";
-//		Y.print();
-//
-//
-//		std::cout << std::endl;
-//		std::system("pause");
-//		std::system("cls");
-//		goto vvod;
-//	};
-//	case 34:
-//	{
-//		std::system("cls");
-//		goto BeginST;
-//	};
-//	case 66:
-//	{
-//		std::system("cls");
-//		goto BeginST;
-//	};
-//	case -21:
-//	{
-//		break;
-//	};
-//	default:
-//	{
-//		std::cout << "Неверный ввод_\n";
-//		std::system("pause");
-//		std::system("cls");
-//		goto vvod;
-//
-//	};
-//
-//
 	
 #endif // STRING
 ///////////////////////////////////////////////////////////////////////////
