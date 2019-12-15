@@ -63,3 +63,12 @@ std::istream& operator>>(std::istream& is,Fraction& obj)
 	obj(num, den);
 	return is;
 }
+
+void Arr_clear(char* Arr[])
+{
+	for (int i = 0; i < 300; i++)
+	{
+		*(Arr + i) = ' ';
+	}
+
+}

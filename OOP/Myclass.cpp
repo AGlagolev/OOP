@@ -10,7 +10,7 @@ class Strings
 	/********************************************************************************************************/
 //// Private
 	int num;
-	char P[300];
+	char ARR[300];
 	/********************************************************************************************************/
 	//// Public
 public:
@@ -62,30 +62,21 @@ public:
 	{
 		char* a;
 		char z = 'd';
-		return P;
+		return ARR;
 	}*/
 	//////////////////////////////////////////
 	void set_Arr(char Arr[])
 	{
-		/*int z = 0;
-		while (Arr[z] != 0) z++;
-		num = z;
-		char* S = new char[z];*/
-		for (int i = 0; i < 299; i++)
+		int i = 0;		
+		while (Arr[i]!= '\0')
 		{
-			P[i] = Arr[i];
+			ARR[i] = Arr[i];
+			i++;
 		}
-		//P = S;
+		num = i;
+		
 	};
-	//////////////////////////////////////////
-	//void set_denum(int denom)
-	//{
-	//	if (denom >= 1 && denom <= 500)
-	//	{
-	//		this->denominator = denom;
-	//	}
-	//	else this->denominator = 1;
-	//};
+	
 	////////////////////////////////////////// OVER_SET
 	//Fraction& operator()(int numer, int denum)
 	//{
@@ -97,9 +88,9 @@ public:
 	void print()
 	{
 		int i = 0;
-		while (P[i])
+		while (i!=num)
 		{
-			std::cout << P[i];
+			std::cout << ARR[i];
 			i++;
 		}
 		std::cout << std::endl;
