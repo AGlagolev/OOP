@@ -28,7 +28,7 @@ int main()
 #endif // TEST
 
 #ifdef STRING
-	Strings As, Bs, Cs;
+	String As, Bs, Cs;
 
 BeginST:
 
@@ -39,6 +39,7 @@ BeginST:
 	std::cin.getline(Arr,300);	
 	//std::cout << Arr << std::endl;
 	
+
 	As.set_Arr(Arr);
 	W_line();
 
@@ -47,28 +48,25 @@ BeginST:
 	std::cin.getline(Arr, 300);
 	Bs.set_Arr(Arr);
 	W_line();
+	Arr_clear(Arr);
 
-	//As.print();
-	//std::cout << As.get_len() << std::endl;
-	//W_line();	
-	//Bs.print();
-	//std::cout << Bs.get_len() << std::endl;
+	
 
 
 
 
 	vvod_S:
 	std::system("cls");
-	std::cout << "\nПервая строка:  ";
+	std::cout << "\nПервая строка:  ";	
 	As.print();
-	std::cout << "( "<< As.get_len() + 1 << " Байт)";
+	std::cout << "( "<< As.get_len() + 1 << " Байт)" << std::endl;
 	W_line();
 	std::cout << "\nВтораяая строка:  ";
 	Bs.print();
-	std::cout << "( "<< Bs.get_len() + 1 << " Байт)";
+	std::cout << "( "<< Bs.get_len() + 1 << " Байт)" << std::endl;
 	W_line();
 	std::cout << std::endl << "\t\t\nВыбирете действие, которое необходимо сделать со строками:  \n" << std::endl;
-	std::cout << "1 - \n2 - \n3 - \n4 - \n5 - \n6 - \n7 - ";
+	std::cout << "1 - сравнение \n2 - поиск в строках \n3 - \n4 - \n5 - \n6 - \n7 - ";
 	std::cout << "\n8 - \n9 - \nr - Перезаписать строки\nESC - выход\n\n";
 
 
@@ -77,37 +75,33 @@ BeginST:
 	//std::cout << _getch()-48;
 	switch (_getch() - 48)
 	{
-		//	case 1:// *
-		//	{
-		//		Z = X * Y;
-		//		X.print(); std::cout << " * "; Y.print(); std::cout << " = "; Z.print();
-		//
-		//		if ((bool)Z.reduce())
-		//		{
-		//			std::cout << " = ";	Z.print();
-		//		}
-		//
-		//		std::cout << std::endl;
-		//		std::system("pause");
-		//		std::system("cls");
-		//		goto vvod;
-		//
-		//	};
-		//	case 2:// :
-		//	{
-		//		Z = X / Y;
-		//		X.print(); std::cout << " : "; Y.print(); std::cout << " = "; Z.print();
-		//
-		//		if (Z.reduce())
-		//		{
-		//			std::cout << " = ";	Z.print();
-		//		}
-		//
-		//		std::cout << std::endl;
-		//		std::system("pause");
-		//		std::system("cls");
-		//		goto vvod;
-		//	};
+			case 1:// 
+			{
+				comparison(As, Bs) ? std::cout << "Строка 1 больше" : std::cout << "Строка 2 больше";
+				
+				std::cout << std::endl;
+				std::system("pause");
+				std::system("cls");
+				goto vvod_S;
+		
+			};
+			case 2:// :
+			{
+				std::cout << "Что ищем?: ";
+				std::cin.getline(Arr, 300);
+				switch (fin_d(Arr, As, Bs))
+				{
+				case 0: {std::cout << "Совпадений не найдено "; break; };
+				case 1: {std::cout << "Найдено совпадение в строке 1"; break; };
+				case 2: {std::cout << "Найдено совпадение в строке 2"; break; };
+				}
+
+		
+				std::cout << std::endl;
+				std::system("pause");
+				std::system("cls");
+				goto vvod_S;
+			};
 		//	case 3: // +
 		//	{
 		//		Z = X + Y;

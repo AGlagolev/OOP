@@ -50,7 +50,7 @@ std::ostream& operator<<(std::ostream& os, const Fraction& obj)
 	return os;
 }
 //////////////////////////////////////////////////////////////
-//std::ostream& operator<<(std::ostream& os, const Strings& obj)
+//std::ostream& operator<<(std::ostream& os, const String& obj)
 //{
 //	os << obj.;
 //	return os;
@@ -70,4 +70,74 @@ void Arr_clear(char* Arr)
 	{
 		*(Arr + i) = ' ';
 	}
+}
+////////////////////////////////////////////////
+//std::ostream& operator<<(std::ostream& os, const String& obj)
+//{
+//	for (int i = 0; i <= obj.get_len(); i++)
+//	{
+//		os << obj.get_Simb(i);
+//	}
+//	
+//	return os;
+//}
+
+///////////////////////////////////////////////
+bool comparison(const String& A, const String& B)
+{
+
+	int z = 0;
+	if (A.get_len() > B.get_len())
+	{
+		z = B.get_len();
+	}
+	else z = A.get_len();
+
+
+	for (int i = 0; i < z; i++)
+	{
+		if (A.get_Simb(i) > B.get_Simb(i))	return true;
+		if (A.get_Simb(i) < B.get_Simb(i))	return false;
+	}
+}
+///////////////////////////////////////////////
+int fin_d(char Arr[], const String& A, const String& B)
+{
+	int z1 = A.get_len();
+	int z2 = B.get_len();
+	int z3 = 0;
+	while (Arr[z3] != '\0')
+	{
+		Arr[z3] = Arr[z3];
+		z3++;
+	}
+	
+
+	for (int i = 0; i < z1; i++)
+	{
+		if (Arr[0] == A.get_Simb(i))
+		{
+			for (int g = 0; g < z3; g++)
+			{
+				if (Arr[g] != A.get_Simb(i + g)) goto b;
+			}
+			return 1;
+		}		
+	}
+
+	b:
+
+	for (int i = 0; i < z2; i++)
+	{
+		if (Arr[0] == B.get_Simb(i))
+		{
+			for (int g = 0; g < z3; g++)
+			{
+				if (Arr[g] != B.get_Simb(i + g)) goto End;
+			}
+			return 2;
+		}
+	}
+	End:
+	return 0;
 }

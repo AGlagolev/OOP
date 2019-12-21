@@ -5,7 +5,7 @@
 /*************************************** Fraction *******************************************************/
 /********************************************************************************************************/
 
-class Strings
+class String
 {
 	/********************************************************************************************************/
 //// Private
@@ -15,55 +15,17 @@ class Strings
 	//// Public
 public:
 	//// Metods
-	//void LCM(const Fraction& other)
-	//{
-	//	int a, b;
-	//	for (int i = 2; i <= this->denominator*other.denominator; i++)
-	//	{
-	//		if ((this->numerator%i == 0) && (this->denominator%i == 0))
-	//		{
-	//			a /= i;
-	//			b /= i;
-	//			this->numerator /= i;
-	//			this->denominator /= i;
-	//			i = this->denominator;
-	//		}
-	//	}
-	//};
-	//////////////////////////////////////////
-	//Fraction& reduce()
-	//{
-	//	int a, b;
-	//	a = this->numerator;
-	//	b = this->denominator;
-
-	//	bool res = false;
-	//	for (int i = this->denominator; i > 1; i--)
-	//	{
-	//		if ((this->numerator%i == 0) && (this->denominator%i == 0))
-	//		{
-	//			a /= i;
-	//			b /= i;
-	//			this->numerator /= i;
-	//			this->denominator /= i;
-	//			i = this->denominator;
-	//			res = true;
-	//		}
-	//	}
-	//	return(*this);
-	//};
+	
 	////////////////////////////////////////// GET&SET
 	int get_len() const
 	{
 		return(this->num);
 	};
 	//////////////////////////////////////////
-	/*char* get_Array() const
+	char get_Simb(int n) const
 	{
-		char* a;
-		char z = 'd';
-		return ARR;
-	}*/
+		return ARR[n];
+	}
 	//////////////////////////////////////////
 	void set_Arr(char Arr[])
 	{
@@ -240,7 +202,7 @@ public:
 	//	return (double(numerator) / denominator);
 	//}
 	////// Constructor
-	Strings()
+	String()
 	{
 		this->num = 1;
 		
@@ -274,7 +236,7 @@ public:
 
 	///********************************************************************************************************/
 	////// Destructor
-	~Strings()
+	~String()
 	{
 		std::cout << "\t\tDestructor:\t" << this << std::endl;
 	};
